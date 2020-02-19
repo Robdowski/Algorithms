@@ -2,8 +2,15 @@
 
 import sys
 
-def making_change(amount, denominations):
-  pass 
+def making_change(amount, denominations, current_coin_index=0):
+  if amount == 0:
+    return 1
+  if amount < 0:
+    return 0
+  if current_coin_index == len(denominations) and amount > 0:
+    return 0
+  
+  return making_change(amount-denominations[current_coin_index], denominations, current_coin_index) + making_change(amount, denominations, current_coin_index+1)
 
 
 if __name__ == "__main__":

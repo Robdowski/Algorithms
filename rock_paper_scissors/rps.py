@@ -2,8 +2,11 @@
 
 import sys
 
-def rock_paper_scissors(n):
-  pass 
+def rock_paper_scissors(n, current_index = 0):
+  plays = ['rock', 'paper', 'scissors']
+  num_plays = []
+  
+  
 
 
 if __name__ == "__main__":

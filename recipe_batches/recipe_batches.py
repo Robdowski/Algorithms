@@ -3,8 +3,14 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  current_min = float("inf")
+  for key in recipe:
+    if key in ingredients:
+      if (ingredients[f"{key}"]//recipe[f"{key}"]) < current_min:
+        current_min = (ingredients[f"{key}"]//recipe[f"{key}"])
+    else:
+      return 0
+  return current_min
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
